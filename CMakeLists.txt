@@ -131,6 +131,11 @@ if(BUILD_TESTS)
     endif()
 endif()
 
+# 类型注册表测试
+add_executable(type_registry_test tests/type_registry_test.cpp)
+target_include_directories(type_registry_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_compile_options(type_registry_test PRIVATE -Wall -Wextra)
+
 # 打印配置信息
 message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "Build Type: ${CMAKE_BUILD_TYPE}")
